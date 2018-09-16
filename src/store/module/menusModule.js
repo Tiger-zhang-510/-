@@ -144,7 +144,7 @@ let menus = [
   let levelNum = 1;
   let startExpand = []; // 保存刷新后当前要展开的菜单项
   function setExpand(source, url) {
-    let sourceItem = '';
+    let sourceItem = ''; //用来存放菜单项的字符串
     for (let i = 0; i < source.length; i++) {
       sourceItem = JSON.stringify(source[i]); // 把菜单项转为字符串
       if (sourceItem.indexOf(url) > -1) { // 查找当前 URL 所对应的子菜单属于哪一个祖先菜单
@@ -166,7 +166,7 @@ let menus = [
   const mutations = {
     findParents(state, payload) {
       if (payload.menu.type === "button") {
-        payload.menu.isExpanded = !payload.menu.isExpanded;
+        payload.menu.isExpanded = !payload.menu.isExpanded;//点击扩展
       } else if (payload.menu.type === "link") {
         if (startExpand.length > 0) {
           for (let i = 0; i < startExpand.length; i++) {

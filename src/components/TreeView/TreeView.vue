@@ -24,6 +24,7 @@ const menusData = []
 .tree-view-menu 
   width:300px 
   height:100%
+  background:skyblue
   overflow-y:auto 
   overflow-x:hidden 
 .tree-view-menu::-webkit-scrollbar

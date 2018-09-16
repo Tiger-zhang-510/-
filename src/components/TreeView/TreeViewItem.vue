@@ -2,7 +2,7 @@
   <div class="tree-view-item">
     <div class="level" :class="'level-'+ menu.level" v-for="menu in menus" :key="menu.id">
       <div v-if="menu.type === 'link'">
-        <router-link class="link" v-bind:to="menu.url" @click.native="toggle(menu)">{{menu.name}}</router-link>
+        <router-link class="link" :to="menu.url" @click.native="toggle(menu)">{{menu.name}}</router-link>
       </div>
       <div v-if="menu.type === 'button'">
         <div class="button heading" :class="{selected: menu.isSelected,expand:menu.isExpanded}" @click="toggle(menu)">
@@ -43,8 +43,7 @@ a {
   text-decoration: none;
   color: #333;
 }
-.link,
-.button {
+.link,.button {
   display: block;
   padding: 10px 15px;
   transition: background-color 0.2s ease-in-out 0s, color 0.3s ease-in-out 0.1s;
@@ -57,8 +56,7 @@ a {
 .button {
   position: relative;
 }
-.link:hover,
-.button:hover {
+.link:hover,.button:hover {
   color: #1976d2;
   background-color: #eee;
   cursor: pointer;
